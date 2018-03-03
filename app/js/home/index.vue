@@ -1,11 +1,11 @@
 <template lang="html">
     <div :class="$style.home">
         <vHeader></vHeader>
-        <Slider></Slider>
+        <Slider :slider="slider"></Slider>
         <novice></novice>
         <borrow></borrow>
-        <money :title="title" :items="items"></money>
-        <product></product>
+        <money :money="money"></money>
+        <product :product="product"></product>
         <service></service> 
         <vfooter></vfooter> 
     </div>
@@ -33,34 +33,22 @@ export default {
   },
   data(){
     return{
-          title:"理财精选",
-          items:[
-              {
-                  title:"定期理财",
-                  sub:"理财首选",
-                  rate:"5.60%",
-                  text:"历史年化回报率"
-              },
-              {
-                  title:"小白理财",
-                  sub:"理财首选",
-                  rate:"4.22%",
-                  text:"7日年化收益率"
-              },
-              {
-                  title:"月月盈",
-                  sub:"养老保障",
-                  rate:"5%",
-                  text:"七日年化收益率"
-              },
-              {
-                  title:"小白基金",
-                  sub:"天天赚钱",
-                  rate:"4.27%",
-                  text:"7日年化收益率"
-              }
-          ]
+          slider:{
+          },
+          money:{
+          },
+          product:{
+
+          }
     }
+  },
+  created () {
+      const self = this;
+      this.$http.get("/zzw").then((res)=>{
+          self.slider = res.data.home.Hslider
+          self.money = res.data.home.money
+          self.product = res.data.home.product
+      })
   }
 }
 </script>

@@ -14,6 +14,7 @@ import header from '../publice/header'
 import Ious_slider from './IOUs_slider'
 import choice from '../financial/choice'
 import service from '../IOUs/service'
+import data from '../../mock/mock'
 export default {
   components: {
       panel,
@@ -47,7 +48,14 @@ export default {
           }
         ]      
       }
-  }
+  },
+//   mounted () {
+//       this.$http.get("/zzw").then(function(res){
+//           console.log(res)
+//       }).catch(function(err) {
+//         console.log(err);
+//       })
+//   }
 }
 </script>
 <style lang="scss" module>

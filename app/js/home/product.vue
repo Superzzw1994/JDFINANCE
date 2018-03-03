@@ -1,5 +1,5 @@
 <template>
-  <panel :title="title" :class="$style.panel">
+  <panel :title="product.title" :class="$style.panel">
       <div :class="$style.container">
         <slider :items="items" :options="options"></slider>
         <div :class="$style.arrow">更多尖货></div>
@@ -14,9 +14,16 @@ export default {
       panel,
       slider
   },
+  props:{
+      product:{
+          type:Object,
+          default:{
+
+          }
+      }
+  },
   data(){
       return{
-          title:"新品推荐",
           items:[
               {
                 src:'//img12.360buyimg.com/jrpmobile/jfs/t16591/349/2066779042/42386/92c7a2f6/5a7d5b56N263586c8.jpg?width=335&height=421',

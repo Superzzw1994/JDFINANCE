@@ -1,7 +1,7 @@
 <template>
-    <panel :title="title" :class="$style.panel">
+    <panel :title="money.title" :class="$style.panel">
       <div :class="$style.container">
-          <dl :class="$style.item" v-for="item in items">
+          <dl :class="$style.item" v-for="item in money.items">
               <router-link to="/home">
                 <dt>{{item.title}}<span :class="$style.red">{{item.sub}}</span></dt>
                 <dd>{{item.rate}}</dd>
@@ -15,12 +15,8 @@
 import panel from '../core/panel'
 export default {
     props:{
-        title:{
-            type:String,
-            default:""
-        },
-        items:{
-            type:Array,
+        money:{
+            type:Object,
             default:""
         }
     },
