@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const vuxLoader = require('vux-loader')
+
 module.exports = env => {
   if (!env) {
     env = {}
